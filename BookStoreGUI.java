@@ -53,10 +53,13 @@ public class BookStoreGUI {
 			@Override 
         	public void actionPerformed(ActionEvent e) {		
 				
-        		try {       			    			
+        		try {
+        			String bookString = "";
+        			
         			for(Book b : books) {
-        				JOptionPane.showMessageDialog(panel, b.toString());
+        				bookString += b.toString() + "\n";
         			}   			
+        			JOptionPane.showMessageDialog(panel, bookString);
         		} catch(Exception ex) {
         			JOptionPane.showMessageDialog(panel, "Database not found!");
         		}
@@ -71,9 +74,12 @@ public class BookStoreGUI {
         	public void actionPerformed(ActionEvent e) {
 				
         		try {	
+        			String custString = "";
         			for(Customer c : customers) {
-        				JOptionPane.showMessageDialog(panel, c.toString());
+        				custString += c.toString() + "\n";
         			}
+        			
+        			JOptionPane.showMessageDialog(panel, custString);
         			
         		} catch(Exception ex) {
         			JOptionPane.showMessageDialog(panel, "Database not found!");
